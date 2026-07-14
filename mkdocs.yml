@@ -1,0 +1,18 @@
+site_name: Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)
+theme: readthedocs
+
+nav:
+  - Home: index.md
+
+# Order matters: config must run before the MathJax bundle.
+extra_javascript:
+  - javascripts/mathjax-config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
+
+markdown_extensions:
+    - mdx_math:
+        enable_dollar_delimiter: True
+
+repo_name: Github
+repo_url: https://github.com/eroicaleo/liner-algebra-done-right-4th/
+edit_uri: 'blob/main/docs/'

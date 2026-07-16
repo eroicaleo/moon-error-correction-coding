@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 2 - Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 2";
+        var mkdocs_page_input_path = "ch02.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 2</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#22-groups">2.2 Groups</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#224-lagranges-theorem">2.2.4 Lagrange’s Theorem</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#lemma-226">Lemma 2.26</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lemma-228">Lemma 2.28</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#theorem-229-lagranges-theorem">Theorem 2.29 (Lagrange’s theorem)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#225-induced-operations-isomorphism">2.2.5 Induced Operations; Isomorphism</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#definition-236">Definition 2.36</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-238">Theorem 2.38</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Chapter 2</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ch02.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-2-groups-and-vector-spaces">Chapter 2 Groups and Vector Spaces</h1>
+<h2 id="22-groups">2.2 Groups</h2>
+<h3 id="224-lagranges-theorem">2.2.4 Lagrange’s Theorem</h3>
+<h4 id="lemma-226">Lemma 2.26</h4>
+<p>Every coset of <script type="math/tex">H</script> in a group <script type="math/tex">G</script> has the same number of elements.</p>
+<p><strong>Proof</strong>:</p>
+<p>Let the coset be <script type="math/tex">a * H</script>. Then we can make an one-to-one mapping between
+<script type="math/tex">a * H</script> and <script type="math/tex">H</script>:</p>
+<p>
+<script type="math/tex; mode=display"> 
+f : a * H \longrightarrow H, a * h \longrightarrow h
+</script>
+</p>
+<p>So <script type="math/tex">a * H</script> has the same number of elements as <script type="math/tex">H</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h4 id="lemma-228">Lemma 2.28</h4>
+<p>The distinct cosets of <script type="math/tex">H</script> in a group <script type="math/tex">G</script> are disjoint.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">a * H</script> and <script type="math/tex">b * H</script> are 2 distinct cosets of <script type="math/tex">H</script>, assume
+<script type="math/tex">c \in a * H \cap b * H</script>, then we can find <script type="math/tex">h_1, h_2</script> such that</p>
+<p>
+<script type="math/tex">a h_1 = c = b h_2</script>, so we have <script type="math/tex">a h_1 h_2^{-1} = b</script>, so <script type="math/tex">b \in a * H</script>.
+That means <script type="math/tex">a * H = b * H</script>.</p>
+<p>Then we reach a contradiction.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h4 id="theorem-229-lagranges-theorem">Theorem 2.29 (Lagrange’s theorem)</h4>
+<p>Let <script type="math/tex">G</script> be a group of finite order and let <script type="math/tex">H</script> be a subgroup of <script type="math/tex">G</script>.
+Then the order of <script type="math/tex">H</script> divides the order of <script type="math/tex">G</script>. That is, <script type="math/tex">|H|</script> divides <script type="math/tex">|G|</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Just apply Lemma 2.26 and Lemma 2.28.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h3 id="225-induced-operations-isomorphism">2.2.5 Induced Operations; Isomorphism</h3>
+<h4 id="definition-236">Definition 2.36</h4>
+<p>Let <script type="math/tex">⟨G,*⟩</script> be a group, <script type="math/tex">H</script> a subgroup and let
+<script type="math/tex">S = \{H_0 = H,H_1,H_2, ...,H_M \}</script> be the set
+of cosets of <script type="math/tex">H</script> in <script type="math/tex">G</script>.
+Then the induced operation between cosets <script type="math/tex">A</script> and <script type="math/tex">B</script> in <script type="math/tex">S</script> is defined by</p>
+<p>
+<script type="math/tex; mode=display"> 
+A * B = C \text{ if and only if } a * b= c
+</script>
+</p>
+<p>for any <script type="math/tex">a ∈ A, b ∈ B</script> and some <script type="math/tex">c ∈ C</script>,
+provided that this operation is well defined. The operation
+is well defined if for every <script type="math/tex">a ∈ A</script> and <script type="math/tex">b ∈ B, a * b ∈ C</script>;
+there is thus no ambiguity in the induced operation.</p>
+<h3 id="theorem-238">Theorem 2.38</h3>
+<p>If <script type="math/tex">H</script> is a subgroup of a commutative group <script type="math/tex">⟨G,*⟩</script>, the induced operation <script type="math/tex">*</script>
+on the set of cosets of <script type="math/tex">H</script> satisfies</p>
+<p>
+<script type="math/tex; mode=display"> 
+(a * b) * H = (a * H) * (b * H).
+</script>
+</p>
+<p>Furthermore, the operation is well defined.</p>
+<p><strong>Proof</strong>:</p>
+<p>We will prove it's well defined, Let
+<script type="math/tex">a_1 \in a * H, b_1 \in b * H</script>, we want to show</p>
+<p>
+<script type="math/tex; mode=display"> 
+(a * b) * H = (a_1 * b_1) * H
+</script>
+</p>
+<p>Since <script type="math/tex">a_1 \in a * H</script>, we have <script type="math/tex">a_1 = a h_1, h_1 \in H</script>.
+Similarly, we have <script type="math/tex">b_1 = b h_2, h_2 \in H</script>.</p>
+<p>Since <script type="math/tex">G</script> is commutative, <script type="math/tex">a_1 b_1 = a h_1 b h_2 = (ab) (h_1h_2)</script>.
+Since <script type="math/tex">H</script> is a subgroup, <script type="math/tex">h_1 h_2 \in H</script>.</p>
+<p>So we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+(a * b) * H = (a_1 * b_1) * H
+</script>
+</p>
+<p>Then the operation is well defined.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax-config.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

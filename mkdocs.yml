@@ -3,6 +3,7 @@ theme: readthedocs
 
 nav:
   - Home: index.md
+  - Chapter 2: ch02.md
 
 # Order matters: config must run before the MathJax bundle.
 extra_javascript:

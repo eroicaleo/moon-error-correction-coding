@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Exercises 2 - Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Exercises 2";
+        var mkdocs_page_input_path = "ex02.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02/">Chapter 2</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Exercises 2</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#21">2.1</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#210">2.10</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#211-144">2.11 [144]</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#218">2.18</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#220">2.20</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#224">2.24</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#225">2.25</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#226">2.26</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#227">2.27</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#229">2.29</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#233">2.33</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Exercises 2</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ex02.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-02-groups-and-vector-spaces">Chapter 02 Groups and Vector Spaces</h1>
+<h2 id="21">2.1</h2>
+<p>A group can be constructed by using the rotations and reflections of a regular 
+pentagon into itself. The group operator is “followed by” (e.g., a reflection 
+<script type="math/tex">𝜌</script> “followed by” a rotation <script type="math/tex">r</script>).
+This is a permutation group, as in Example 2.14.</p>
+<p>(a) How many elements are in this group?</p>
+<p>There are <script type="math/tex">5</script> different rotations and <script type="math/tex">5</script> different reflections
+along each vertex of the pentagon. So there are 10 elements in this group.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Construct the group (i.e., show the 
+“multiplication table” for the group).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">
+<script type="math/tex">*</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">e</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">r_1</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">r_2</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">r_3</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">r_4</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">s_0</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">s_1</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">s_2</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">s_3</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">s_4</script>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong><script type="math/tex">e</script></strong></td>
+<td style="text-align: center;">
+<script type="math/tex">e</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_4</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><script type="math/tex">r_1</script></strong></td>
+<td style="text-align: center;">
+<script type="math/tex">r_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">e</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_0</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><script type="math/tex">r_2</script></strong></td>
+<td style="text-align: center;">
+<script type="math/tex">r_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">e</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_1</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><script type="math/tex">r_3</script></strong></td>
+<td style="text-align: center;">
+<script type="math/tex">r_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">e</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_2</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><script type="math/tex">r_4</script></strong></td>
+<td style="text-align: center;">
+<script type="math/tex">r_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">e</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_3</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><script type="math/tex">s_0</script></strong></td>
+<td style="text-align: center;">
+<script type="math/tex">s_0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">e</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_1</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><script type="math/tex">s_1</script></strong></td>
+<td style="text-align: center;">
+<script type="math/tex">s_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">e</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_2</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><script type="math/tex">s_2</script></strong></td>
+<td style="text-align: center;">
+<script type="math/tex">s_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">e</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_3</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><script type="math/tex">s_3</script></strong></td>
+<td style="text-align: center;">
+<script type="math/tex">s_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">e</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_4</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><script type="math/tex">s_4</script></strong></td>
+<td style="text-align: center;">
+<script type="math/tex">s_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">s_0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_4</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">r_1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">e</script>
+</td>
+</tr>
+</tbody>
+</table>
+<p>skip</p>
+<p>(c) Is it an Abelian group?</p>
+<p><strong>Solution</strong>: No. </p>
+<p>
+<script type="math/tex">r_1 s_0 = s_1</script> and <script type="math/tex">s_0 r_1 = s_4</script>.</p>
+<p>
+<script type="math/tex">\{0,1,2,3,4\} \rightarrow \{4,0,1,2,3\}
+\rightarrow \{4,3,2,1,0\}</script>
+</p>
+<p>(d) Find a subgroup with five elements and a subgroup with two elements.</p>
+<p><strong>Solution</strong>: The rotations forms five elements.
+One of the reflections and <script type="math/tex">0</script> forms two elements.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="210">2.10</h2>
+<p>An automorphism of a group <script type="math/tex">G</script> is an isomorphism 
+of the group with itself, <script type="math/tex">\phi: G \to G</script>. Using 
+Exercise 2.9, how many automorphisms are there of 
+<script type="math/tex">\mathbb{Z}_2</script>? of <script type="math/tex">\mathbb{Z}_6</script>? of
+<script type="math/tex">\mathbb{Z}_8</script>? of <script type="math/tex">\mathbb{Z}_{17}</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>Because all these groups are cyclic group, so
+we just need to consider <script type="math/tex">\phi(1)</script>.</p>
+<p>For <script type="math/tex">\mathbb{Z}_2</script>, there is only one
+case for automorphism, i.e. <script type="math/tex">\phi(1) = 1</script>.</p>
+<p>For <script type="math/tex">\mathbb{Z}_6</script>, there are 2
+cases for automorphism, i.e. <script type="math/tex">\phi(1) = 1, 5</script>.</p>
+<p>For <script type="math/tex">\mathbb{Z}_8</script>, there are 4
+cases for automorphism, i.e. <script type="math/tex">\phi(1) = 1,3,5,7</script>.</p>
+<p>For <script type="math/tex">\mathbb{Z}_17</script>, there are 16
+cases for automorphism, i.e. <script type="math/tex">\phi(1) = 1,\cdots,16</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="211-144">2.11 [144]</h2>
+<p>Let <script type="math/tex">G</script> be a finite Abelian group of order <script type="math/tex">n</script>, and let <script type="math/tex">r</script> be 
+a positive integer relatively prime
+to <script type="math/tex">n</script> (i.e., they have no factors in common except <script type="math/tex">1</script>).
+Show that the map <script type="math/tex">\phi_r ∶ G → G</script> defined
+by <script type="math/tex">\phi_r(a) = a^r</script> is an isomorphism of <script type="math/tex">G</script> onto itself (an 
+automorphism). Deduce that the equation
+<script type="math/tex">x^r = a</script> always has a unique solution in a finite Abelian group <script type="math/tex">G</script> if 
+<script type="math/tex">r</script> is relatively prime to the
+order of <script type="math/tex">G</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>First, we will show that we cannot find <script type="math/tex">a \in G</script> and <script type="math/tex">a \neq e</script> such that
+<script type="math/tex">a^r = e</script>.</p>
+<p>Consider the following <script type="math/tex">n+1</script> elements</p>
+<p>
+<script type="math/tex; mode=display"> 
+a^0 = e, a, a^2, \cdots, a^n
+</script>
+</p>
+<p>Since <script type="math/tex">|G|=n</script>, there must be 2 elements satisfy <script type="math/tex">a^i = a^j</script>, with
+<script type="math/tex">i < j</script>. As a result <script type="math/tex">a^{j-i}=e</script>.</p>
+<p>Let <script type="math/tex">m</script> be the order of <script type="math/tex">a</script>, then we know <script type="math/tex">m \leq j-i \leq n</script>.</p>
+<p>Since <script type="math/tex">a^0, a, \cdots, a^{m-1}</script> forms a subgroup, then from
+the Lagrange’s Theorem, we know <script type="math/tex">m \mid n</script>.</p>
+<p>Since <script type="math/tex">(r,n) = 1</script>, then we have <script type="math/tex">(r,m) = 1</script>. So <script type="math/tex">m \nmid r</script>.</p>
+<p>Let <script type="math/tex">r' \equiv r (\text{mod } m)</script>, then <script type="math/tex">0 < r' < m</script>.
+So <script type="math/tex">a^r = a^{r'} \neq e</script>.</p>
+<p>Then assume <script type="math/tex">a^r = b^r</script>, since <script type="math/tex">G</script> is Abelian, we have
+<script type="math/tex">(a b^{-1})^r = e</script>. From the discussion above, <script type="math/tex">a b^{-1} = e</script>, so
+<script type="math/tex">a = b</script>.</p>
+<p>This means <script type="math/tex">\phi_r</script> is injective. Since <script type="math/tex">G</script> is a finite group,
+it means <script type="math/tex">\phi_r</script> is also surjective.</p>
+<p>Then <script type="math/tex">\phi_r</script> is one-to-one.</p>
+<p>Furthermore, since <script type="math/tex">G</script> is Abelian</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+\phi_r(ab) &= (ab)^r \\
+&= a^r b^r \\
+&= \phi_r(a) \phi_r(b)
+\end{align*} 
+</script>
+</p>
+<p>So <script type="math/tex">\phi_r</script> is an isomorphism.</p>
+<p>Since <script type="math/tex">\phi_r</script> is one-to-one, given any <script type="math/tex">x \in G</script>, we can find unique
+<script type="math/tex">a</script> such that <script type="math/tex">\phi_r(a) = x</script>, i.e. <script type="math/tex">a^r = x</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="218">2.18</h2>
+<p>Consider the set <script type="math/tex">S = \{0,1,2,3\}</script> with the operations</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">
+<script type="math/tex">+</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">0</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">1</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">2</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">3</script>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">3</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<script type="math/tex">1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<script type="math/tex">2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">1</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<script type="math/tex">3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">2</script>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">
+<script type="math/tex">\cdot</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">0</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">1</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">2</script>
+</th>
+<th style="text-align: center;">
+<script type="math/tex">3</script>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<script type="math/tex">1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">3</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<script type="math/tex">2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">2</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">1</script>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<script type="math/tex">3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">0</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">3</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">1</script>
+</td>
+<td style="text-align: center;">
+<script type="math/tex">2</script>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Is this a field? If not, why not?</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider the 
+F11 Multiplication distributes over addition: <script type="math/tex">a \cdot (b +c) = a \cdot b +a \cdot c</script>
+</p>
+<p>Let <script type="math/tex">a = 2, b = 2, c = 3</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+2 \cdot (2 + 3) = 2 \cdot 1 = 2
+</script>
+</p>
+<p>And</p>
+<p>
+<script type="math/tex; mode=display"> 
+a \cdot b +a \cdot c
+= 2 \cdot 2 + 2 \cdot 3
+= 3 + 1
+= 0
+</script>
+</p>
+<p>So it violates the F11, then it's not a field.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="220">2.20</h2>
+<p>Use the representation of <script type="math/tex">GF(4)</script> in (2.4) to solve the following pair of equations:</p>
+<p>
+<script type="math/tex; mode=display">
+2x + y = 3 \\
+x + 2y = 3 \\
+</script>
+</p>
+<p><strong>Solution</strong></p>
+<p>We first add them together and get</p>
+<p>
+<script type="math/tex; mode=display"> 
+3(x+y) = 3+3 = 0
+</script>
+</p>
+<p>So <script type="math/tex">x+y = 0</script>. Also <script type="math/tex">2(x+y)=0</script>.</p>
+<p>We add it to the first equation and get
+<script type="math/tex">(2+2)x + (1+2)y = 0x + 3y = 3y = 3</script>.
+So <script type="math/tex">y = 1</script>, similarly, <script type="math/tex">x = 1</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="224">2.24</h2>
+<p>Let <script type="math/tex">V</script> be a vector space, and let <script type="math/tex">W \subset V</script> be a subspace. The dual 
+space <script type="math/tex">W^\perp</script> of <script type="math/tex">W</script> is the set of vectors in <script type="math/tex">V</script> which are orthogonal to 
+every vector in <script type="math/tex">W</script>. Show that the dual space <script type="math/tex">W^\perp</script> is a subspace of <script type="math/tex">V</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">u,v \in W^\perp</script>, <script type="math/tex">w \in W</script>, then</p>
+<p>First <script type="math/tex">⟨0,w⟩ = 0</script>. So <script type="math/tex">0 \in W^\perp</script>.</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨u+v,w⟩ = ⟨u,w⟩+⟨v,w⟩ = 0 + 0 = 0
+</script>
+</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+⟨ku,w⟩ = k ⟨u,w⟩ = k0 = 0
+</script>
+</p>
+<p>So <script type="math/tex">W^\perp</script> is a subspace of <script type="math/tex">V</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="225">2.25</h2>
+<p>Show that the set of binary polynomials (i.e., polynomials with binary coefficients, with operations in <script type="math/tex">GF(2)</script>) with degree less than <script type="math/tex">r</script> forms a vector space over <script type="math/tex">GF(2)</script> with dimension <script type="math/tex">r</script>.</p>
+<p><strong>Solution</strong>:</p>
+<p>Let <script type="math/tex">𝒫_{r-1}(GF(2))</script> be the set.</p>
+<p>Since the constant <script type="math/tex">0</script> has degree <script type="math/tex">-\infty</script> which is
+less than <script type="math/tex">r</script>, so <script type="math/tex">0 \in 𝒫_{r-1}(GF(2))</script>.</p>
+<p>Next, if</p>
+<p>
+<script type="math/tex; mode=display"> 
+p_1(z) = a_0 + a_1 z + \cdots + a_{r-1} z^{r-1} \\
+p_2(z) = b_0 + b_1 z + \cdots + b_{r-1} z^{r-1} \\
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+p_1(z) + p_2(z) = \\
+(a_0+b_0) + (a_1+b_1) z + \cdots + 
+(a_{r-1}+b_{r-1}) z^{r-1}
+</script>
+</p>
+<p>Its degree is still less than <script type="math/tex">r</script>.</p>
+<p>Also</p>
+<p>
+<script type="math/tex; mode=display"> 
+k p_1(z) = ka_0 + ka_1 z + \cdots + ka_{r-1} z^{r-1}
+</script>
+</p>
+<p>Its degree is still less than <script type="math/tex">r</script>.</p>
+<p>So <script type="math/tex">𝒫_{r-1}(GF(2))</script> is a vector space.</p>
+<p>Now we need to prove it's dimension is <script type="math/tex">r</script>.</p>
+<p>Consider the following <script type="math/tex">r</script> polynomials</p>
+<p>
+<script type="math/tex; mode=display"> 
+1, z, \cdots, z^{r-1}
+</script>
+</p>
+<p>First, if</p>
+<p>
+<script type="math/tex; mode=display"> 
+a_0 + a_1 z + \cdots + a_{r-1} z^{r-1} = 0
+</script>
+</p>
+<p>Then <script type="math/tex">a_0 = a_1 = \cdots = a_{r-1} = 0</script>.</p>
+<p>So they are linear independent.</p>
+<p>Also for any binary polynomial with degree less 
+than <script type="math/tex">r</script>, it can be represented as the linear
+combination of <script type="math/tex">1, z, \cdots, z^{r-1}</script>.</p>
+<p>So it's a basis of <script type="math/tex">𝒫_{r-1}(GF(2))</script>.</p>
+<p>So <script type="math/tex">\dim 𝒫_{r-1}(GF(2)) = r</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="226">2.26</h2>
+<p>What is the dimension of the vector space spanned by the vectors</p>
+<p>
+<script type="math/tex; mode=display"> 
+\{(1,1,0,1,0,1),(0,1,0,1,1,1),(1,1,0,0,1,1),(0,1,1,1,0,1),(1,0,0,0,0,0)\}
+</script>
+</p>
+<p>over <script type="math/tex">GF(2)</script>?</p>
+<p><strong>Solution</strong>:</p>
+<p>Assume</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+v_1 = (1,1,0,1,0,1) \\
+v_2 = (0,1,0,1,1,1) \\
+v_3 = (1,1,0,0,1,1) \\
+v_4 = (0,1,1,1,0,1) \\
+v_5 = (1,0,0,0,0,0) \\
+\end{align*} 
+</script>
+</p>
+<p>We will prove they are independent.</p>
+<p>Assume <script type="math/tex">a_1 v_1 + \cdots + a_5 v_5 = 0</script>
+</p>
+<p>We have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+a_1 + a_3 + a_5 &= 0 & (1)\\
+a_1 + a_2 + a_3 + a_4 &= 0 & (2)\\
+a_4 &= 0 & (3)\\
+a_1 + a_2 + a_4 &= 0 & (4)\\
+a_2 + a_3 &= 0 & (5)\\
+\end{align*}
+</script>
+</p>
+<p>From <script type="math/tex">(2)(3)(5)</script>, we have <script type="math/tex">a_1 = a_4 = 0</script>. Then from (4),
+we have <script type="math/tex">a_2 = 0</script>, then  from (5), <script type="math/tex">a_3 = 0</script>.
+Then from <script type="math/tex">(1)</script>, we have <script type="math/tex">a_5 = 0</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="227">2.27</h2>
+<p>Find a basis for the dual space to the vector 
+space spanned by</p>
+<p>
+<script type="math/tex; mode=display"> 
+\{(1,1,1,0,0),(0,1,1,1,0),(0,0,1,1,1)\}
+</script>
+</p>
+<p><strong>Solution</strong>:</p>
+<p>First note, these 3 vectors are linear independent.
+That means the dimension of the dual space is <script type="math/tex">2</script>.</p>
+<p>Assume <script type="math/tex">(a_1, \cdots, a_5)</script> is orthogonal to these 3 vectors.</p>
+<p>Then we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+a_1 + a_2 + a_3 &= 0 \\
+a_2 + a_3 + a_4 &= 0 \\
+a_3 + a_4 + a_5 &= 0 \\
+\end{align*} 
+</script>
+</p>
+<p>we have</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{align*}
+a_1 &= a_4 \\ 
+a_2 &= a_5 \\ 
+\end{align*} 
+</script>
+</p>
+<p>Consider the following 2 vectors.</p>
+<p>
+<script type="math/tex; mode=display"> 
+(1,0,-1,1,0), (0,1,-1,0,1)
+</script>
+</p>
+<p>Note they are independent, then they are a basis of the dual space.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="229">2.29</h2>
+<p>Is it true that if 𝐱,𝐲 and 𝐳 are linearly independent vectors over
+<script type="math/tex">GF(q)</script> then so also are 𝐱 +𝐲, 𝐲 +𝐳 and 𝐳 +𝐱?</p>
+<p><strong>Proof</strong>: We will give an counterexample for <script type="math/tex">GF(2)^3</script>.</p>
+<p>Assume </p>
+<p>
+<script type="math/tex; mode=display">
+x = (1,0,0) \\
+y = (0,1,0) \\
+z = (0,0,1) \\
+</script>
+</p>
+<p>Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+x+y &= (1,1,0) \\
+y+z &= (0,1,1) \\
+z+x &= (1,0,1) \\
+\end{align*} 
+</script>
+</p>
+<p>Then <script type="math/tex">(x+y) + (y+z) + (z+x) = (0,0,0)</script>, so they are linear
+dependent.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="233">2.33</h2>
+<p>In this exercise, let <script type="math/tex">𝐱⋅ 𝐲</script> denote the inner 
+product over the real numbers. Let <script type="math/tex">𝐱</script> and <script type="math/tex">𝐲</script> 
+be vectors
+of length <script type="math/tex">n</script> with elements from the set
+<script type="math/tex">\{−1,1\}</script>.
+Show that </p>
+<p>
+<script type="math/tex; mode=display"> 
+d_H (𝐱,𝐲) = \frac{n−𝐱⋅𝐲}{2}.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Let</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝐱 = (x_1, \cdots, x_n) \\
+𝐲 = (y_1, \cdots, y_n) \\
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{align*}
+d_H(𝐱,𝐲) &= \frac{1}{4} (\sum_{i = 1}^{n} (x_i - y_i)^2) \\
+&= \frac{1}{4} (\sum_{i = 1}^{n} x_i^2 +
+\sum_{i = 1}^{n} y_i^2 -
+2 \sum_{i = 1}^{n} x_i y_i ) \\
+&= \frac{1}{4} ( 2n - 2 𝐱⋅𝐲 ) \\
+&= \frac{n - 𝐱⋅𝐲}{2}
+\end{align*} 
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch02/" class="btn btn-neutral float-left" title="Chapter 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href="../ch02/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax-config.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

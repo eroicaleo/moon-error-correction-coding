@@ -62,13 +62,25 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#definition-236">Definition 2.36</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#theorem-238">Theorem 2.38</a>
+    </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#theorem-238">Theorem 2.38</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#24-review-of-linear-algebra">2.4 Review of Linear Algebra</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-262">Definition 2.62</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-264">Theorem 2.64</a>
     </li>
         </ul>
     </li>
     </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ex02/">Exercises 2</a>
                 </li>
               </ul>
       </div>
@@ -147,7 +159,7 @@ A * B = C \text{ if and only if } a * b= c
 provided that this operation is well defined. The operation
 is well defined if for every <script type="math/tex">a ∈ A</script> and <script type="math/tex">b ∈ B, a * b ∈ C</script>;
 there is thus no ambiguity in the induced operation.</p>
-<h3 id="theorem-238">Theorem 2.38</h3>
+<h4 id="theorem-238">Theorem 2.38</h4>
 <p>If <script type="math/tex">H</script> is a subgroup of a commutative group <script type="math/tex">⟨G,*⟩</script>, the induced operation <script type="math/tex">*</script>
 on the set of cosets of <script type="math/tex">H</script> satisfies</p>
 <p>
@@ -178,11 +190,66 @@ Since <script type="math/tex">H</script> is a subgroup, <script type="math/tex">
 <p>
 <script type="math/tex">\square</script>
 </p>
+<h2 id="24-review-of-linear-algebra">2.4 Review of Linear Algebra</h2>
+<h4 id="definition-262">Definition 2.62</h4>
+<p>Let <script type="math/tex">W</script> be a <script type="math/tex">k</script>-dimensional subspace of a vector space <script type="math/tex">V</script>. The set of all 
+vectors <script type="math/tex">𝐮 ∈ V</script>
+which are orthogonal to all the vectors of <script type="math/tex">W</script> is called the dual space of
+<script type="math/tex">W</script> (sometimes called the orthogonal complement of <script type="math/tex">W</script> or dual space), denoted 
+<script type="math/tex">W_⟂</script>. (The symbol <script type="math/tex">W_⟂</script> is sometimes pronounced <script type="math/tex">“W</script> perp,” for “perpendicular.”) 
+That is,</p>
+<p>
+<script type="math/tex; mode=display"> 
+W_⟂ = \{𝐮 ∈ V ∶ 𝐮 \cdot 𝐰 = 0 \text{ for all } 𝐰 ∈ W\}.
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h4 id="theorem-264">Theorem 2.64</h4>
+<p>Let <script type="math/tex">V</script> be a finite-dimensional vector space of <script type="math/tex">n</script>-tuples,
+<script type="math/tex">\mathbb{F}^n</script>, with a subspace <script type="math/tex">W</script> of
+dimension <script type="math/tex">k</script>. Let <script type="math/tex">U= W_⟂</script> be the dual space of <script type="math/tex">W</script>. Then</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim(W_⟂) = \dim(V)−\dim(W) = n−k.
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>We will use a different approach compare to the textbook.</p>
+<p>Let <script type="math/tex">e_1, \cdots, e_n</script> be the standard basis of <script type="math/tex">\mathbb{F}^n</script>.
+And <script type="math/tex">\psi_1, \cdots, \psi_n</script> be the dual basis of <script type="math/tex">e_1, \cdots, e_n</script>.</p>
+<p>Then we can construct an isomorphism from</p>
+<p>
+<script type="math/tex; mode=display"> 
+T: \mathbb{F}^n \longrightarrow (\mathbb{F}^{n})',
+(a_1, \cdots, a_n) \longrightarrow
+a_1 \psi_1 + \cdots + a_n \psi_n
+</script>
+</p>
+<p>Then in fact, <script type="math/tex">W_⟂</script> is isomorphic to the annihilator of <script type="math/tex">W</script>,
+i.e. <script type="math/tex">W^0</script>. From Linear Algebra Done Right 4th edition,
+3.125 dimension of the annihilator, we know</p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim W^0 = \dim 𝑉 − \dim W.
+</script>
+</p>
+<p>So </p>
+<p>
+<script type="math/tex; mode=display"> 
+\dim(W_⟂) = \dim W^0 = \dim 𝑉 − \dim W
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ex02/" class="btn btn-neutral float-right" title="Exercises 2">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -211,6 +278,8 @@ Since <script type="math/tex">H</script> is a subgroup, <script type="math/tex">
     
       <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../ex02/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

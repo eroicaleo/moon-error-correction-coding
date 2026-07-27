@@ -5,6 +5,7 @@ nav:
   - Home: index.md
   - Chapter 2: ch02.md
   - Exercises 2: ex02.md
+  - Chapter 3: ch03.md
 
 # Order matters: config must run before the MathJax bundle.
 extra_javascript:

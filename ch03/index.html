@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Chapter 3 - Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Chapter 3";
+        var mkdocs_page_input_path = "ch03.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02/">Chapter 2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ex02/">Exercises 2</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Chapter 3</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#31-basic-definitions">3.1 Basic Definitions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-31">Definition 3.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-32">Definition 3.2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-33">Definition 3.3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#theorem-34">Theorem 3.4</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#32-the-generator-matrix-description-of-linear-block-codes">3.2 The Generator Matrix Description of Linear Block Codes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-36">Definition 3.6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-37">Definition 3.7</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ex03/">Exercises 3</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Chapter 3</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ch03.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-3-linear-block-codes">Chapter 3 Linear Block Codes</h1>
+<h2 id="31-basic-definitions">3.1 Basic Definitions</h2>
+<p>
+<script type="math/tex">\mathcal{A}</script> having <script type="math/tex">q</script> symbols, where <script type="math/tex">\mathcal{A}</script> forms a field.
+<script type="math/tex">(c_0, \cdots, c_{n-1}) \in \mathcal{A}^n</script> with <script type="math/tex">n</script> elements as
+an <script type="math/tex">n</script>-vector or an <script type="math/tex">n</script>-tuple.</p>
+<h4 id="definition-31">Definition 3.1</h4>
+<p>An <script type="math/tex">(n,k)</script> block code <script type="math/tex">\mathcal{C}</script> over an alphabet of <script type="math/tex">q</script> symbols is a set of
+<script type="math/tex">q^k</script>
+<script type="math/tex">n</script>-vectors called
+<strong>codewords</strong> or <strong>code vectors</strong>.
+Associated with the code is an <script type="math/tex">encoder</script> which maps a 
+<script type="math/tex">message</script>, a <script type="math/tex">k</script>-tuple <script type="math/tex">m ∈ \mathcal{A}^k</script>, to its associated codeword.</p>
+<h4 id="definition-32">Definition 3.2</h4>
+<p>A block code <script type="math/tex">\mathcal{C}</script> over a field <script type="math/tex">\mathbb{F}_q</script> of <script type="math/tex">q</script> 
+symbols of length <script type="math/tex">n</script> and <script type="math/tex">q^k</script> codewords is a <script type="math/tex">q</script>-ary
+linear <script type="math/tex">(n,k)</script> code if and only if its <script type="math/tex">q^k</script> codewords form a 
+<script type="math/tex">k</script>-dimensional vector subspace of the vector
+space of all the <script type="math/tex">n</script>-tuples <script type="math/tex">\mathbb{F}_q^n</script>.
+The number <script type="math/tex">n</script> is said to be the length of the code and the number <script type="math/tex">k</script> is the
+dimension of the code. The rate of the code is <script type="math/tex">R = k∕n</script>.</p>
+<h4 id="definition-33">Definition 3.3</h4>
+<p>The Hamming weight <script type="math/tex">wt(𝐜)</script> of a codeword <script type="math/tex">𝐜</script> is the number of 
+nonzero components of
+the codeword. The minimum weight
+<script type="math/tex">𝑤_{\min}</script> of a code <script type="math/tex">\mathcal{C}</script> is the smallest Hamming weight 
+of any nonzero codeword:
+<script type="math/tex">w_{\min} = \min_{𝐜 ∈ \mathcal{C},𝐜≠0}wt(𝐜)</script>.</p>
+<h4 id="theorem-34">Theorem 3.4</h4>
+<p>For a linear code <script type="math/tex">\mathcal{C}</script>, the minimum distance
+<script type="math/tex">d_{\min }</script> satisfies <script type="math/tex">d_{\min} = 𝑤_{\min}</script>. That is, the
+minimum distance of a linear block code is equal to the minimum 
+weight of its nonzero codewords.</p>
+<p><strong>Proof</strong>:</p>
+<p>Since there are only finite codewords, we can find 2 codewords
+that satisfies the <script type="math/tex">d_{\min}</script>, say they are <script type="math/tex">c_0, c_1</script>.</p>
+<p>So <script type="math/tex">d_{\min} = d(c_0, c_1) = wt(c_0 - c_1)</script>.</p>
+<p>Let <script type="math/tex">c_2 = c_0 - c_1</script>.
+Since <script type="math/tex">\mathcal{C}</script> is a linear code, <script type="math/tex">0, c_2 \in \mathcal{C}</script>.</p>
+<p>
+<script type="math/tex">d(c_2, 0) = wt(c_2) = wt(c_0 - c_1) = d_{\min}</script>.</p>
+<p>On the other hand, given any <script type="math/tex">c \in \mathcal{C}</script>,</p>
+<p>
+<script type="math/tex">wt(c) = d(c,0) \geq d_{\min} = wt(c_2)</script>, so <script type="math/tex">c_2</script> is a
+codeword with minimum weight.</p>
+<p>We have found a codeword with minimum nonzero weight and
+its weight equals to the <script type="math/tex">d_{\min}</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="32-the-generator-matrix-description-of-linear-block-codes">3.2 The Generator Matrix Description of Linear Block Codes</h2>
+<p>Since <script type="math/tex">\mathcal{C}</script> is a <script type="math/tex">k</script> dimensional subspace, we can find
+<script type="math/tex">g_0, \cdots, g_{k-1}</script> such that for <script type="math/tex">c \in \mathcal{C}</script>.</p>
+<p>
+<script type="math/tex; mode=display"> 
+\tag{3-1}
+c = m_0 g_0 + \cdots + m_{k-1} g_{k-1}
+</script>
+</p>
+<p>where <script type="math/tex">m_i \in \mathbb{F}_q</script>.</p>
+<p>Think <script type="math/tex">g_i</script> as row vectors and stack them together, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+G =
+\begin{bmatrix}
+g_0 \\
+g_1 \\
+\vdots \\
+g_{k-1}
+\end{bmatrix}
+</script>
+</p>
+<p>and let <script type="math/tex">m = [m_0, \cdots, m_{k-1}]</script>, we have <script type="math/tex">c = m G</script>.</p>
+<h4 id="definition-36">Definition 3.6</h4>
+<p>Let <script type="math/tex">\mathcal{C}</script> be an <script type="math/tex">(n,k)</script> block code (not necessarily linear).
+An encoder is <strong>systematic</strong> if the
+message symbols <script type="math/tex">m_0,m_1, ...,m_{k−1}</script> may be found explicitly and unchanged in the codeword.
+That is,
+there are coordinates <script type="math/tex">i_0,i_1, ...,i_{k−1}</script>
+(which are most frequently sequential, <script type="math/tex">i_0,i_0 +1, ...,i_0 +k−1</script>)
+such that <script type="math/tex">c_{i_0} = m_0,c_{i_1} = m_1, ...,c_{i_{k−1}} = m_{k−1}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>Frequently, a systematic generator is written in the form</p>
+<p>
+<script type="math/tex; mode=display"> 
+G = [P I_k]
+</script>
+</p>
+<p>where <script type="math/tex">I_k</script> is the <script type="math/tex">k ×k</script> identity matrix and <script type="math/tex">P</script> is a
+<script type="math/tex">k ×(n−k)</script> matrix which generates parity symbols. The
+encoding operation is</p>
+<p>
+<script type="math/tex; mode=display"> 
+c = [mP m]
+</script>
+</p>
+<p>The codeword is divided into two parts:
+the part <script type="math/tex">𝐦</script> consists of the message symbols, and the part <script type="math/tex">𝐦P</script>
+consists of the parity check symbols.</p>
+<h4 id="definition-37">Definition 3.7</h4>
+<p>Two linear codes which are the same except for a permutation of the components of
+the code are said to be equivalent codes.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ex02/" class="btn btn-neutral float-left" title="Exercises 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ex03/" class="btn btn-neutral float-right" title="Exercises 3">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href="../ex02/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ex03/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax-config.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

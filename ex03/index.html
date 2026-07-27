@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Exercises 3 - Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Exercises 3";
+        var mkdocs_page_input_path = "ex03.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch02/">Chapter 2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ex02/">Exercises 2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ch03/">Chapter 3</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Exercises 3</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#31">3.1</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#32">3.2</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#33">3.3</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#37">3.7</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#38">3.8</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#325">3.25</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#326">3.26</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#329">3.29</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Error Correction Coding Mathematical Methods and Algorithms Todd Moon (2nd Edition)</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Exercises 3</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/blob/main/docs/ex03.md" class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="chapter-3-linear-block-codes">Chapter 3 Linear Block Codes</h1>
+<h2 id="31">3.1</h2>
+<p>Find, by trial and error, a set of four binary codewords of 
+length three such that each word is at
+least a distance of <script type="math/tex">2</script> from every other word.</p>
+<p><strong>Solution</strong>:</p>
+<p>Consider the following 4 code words:</p>
+<p>
+<script type="math/tex; mode=display"> 
+(0,0,0) \\
+(1,0,1) \\
+(0,1,1) \\
+(1,1,0) \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="32">3.2</h2>
+<p>Find a set of <script type="math/tex">16</script> binary words of length <script type="math/tex">7</script> such that each word 
+is at least a distance of <script type="math/tex">3</script> from
+every other word. Hint: Hamming code.</p>
+<p><strong>Solution</strong>:</p>
+<p>From section 1.9, equation (1.35), consider</p>
+<p>
+<script type="math/tex; mode=display"> 
+[0,0,0,0,0,0,0] \\
+[1,1,0,1,0,0,0] \\
+[0,1,1,0,1,0,0] \\
+[1,0,1,1,1,0,0] \\
+[0,0,1,1,0,1,0] \\
+[1,1,1,0,0,1,0] \\
+[0,1,0,1,1,1,0] \\
+[1,0,0,0,1,1,0] \\
+[0,0,0,1,1,0,1] \\
+[1,1,0,0,1,0,1] \\
+[0,1,1,1,0,0,1] \\
+[1,0,1,0,0,0,1] \\
+[0,0,1,0,1,1,1] \\
+[1,1,1,1,1,1,1] \\
+[0,1,0,0,0,1,1] \\
+[1,0,0,1,0,1,1] \\
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="33">3.3</h2>
+<p>Perhaps the simplest of all codes is the binary parity check code, a <script type="math/tex">(n,n−1)</script>code,
+where <script type="math/tex">k= n−1</script>.
+Given a message vector <script type="math/tex">𝐦 = (m_0,m_1, ...,m_{k−1})</script>, the codeword is
+<script type="math/tex">𝐜 = (m_0,m_1, ...,m_{k−1},b)</script>,
+where <script type="math/tex">b = \sum_{j = 0}^{k-1} m_j</script> 
+(arithmetic in <script type="math/tex">GF(2)</script>) is the parity bit. Such a code is called an even parity
+code, since all codewords have even parity — an even number of 1 bits.</p>
+<p>(a) Determine the minimum distance for this code.</p>
+<p>It's a linear block code, so from Theorem 3.4, we have <script type="math/tex">d_{\min} = 𝑤_{\min}</script>.
+It's not possible for a codeword to have only one <script type="math/tex">1</script>, so <script type="math/tex">d_{\min} = 𝑤_{\min} = 2</script>.</p>
+<p>(b) How many errors can this code correct? How many errors can this code detect?</p>
+<p>It cannot correct any error, but it can detect 1 bit error.</p>
+<p>(c) Determine a generator matrix for this code.</p>
+<p>Then generator matrix is an <script type="math/tex">(n-1) \times n</script> matrix, the left part is an identity matrix,
+while the last column is all one.</p>
+<h2 id="37">3.7</h2>
+<p>The generator matrix for a code over <script type="math/tex">GF(2)</script>is given by</p>
+<p>
+<script type="math/tex; mode=display"> 
+G =
+\begin{bmatrix}
+1 & 1 & 1 & 0 & 1 & 0 \\
+1 & 0 & 0 & 1 & 1 & 1 \\
+0 & 0 & 1 & 0 & 1 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Find a generator matrix and parity check matrix for
+an equivalent systematic code.</p>
+<p><strong>Solution</strong>: We will do the generator matrix first since
+I only finished section 3.2.</p>
+<p>Substract the 3rd row from the 2nd row, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+1 & 1 & 1 & 0 & 1 & 0 \\
+1 & 0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Swap the 4th and 5th row, we have</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 & 1 & 0 \\
+0 & 0 & 1 & 1 & 0 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>The substract the 1st row from the 3rd row</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+1 & 1 & 1 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 & 0 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>That's an generator matrix for
+an equivalent systematic code.</p>
+<p>Another one from only row operations.</p>
+<p>Substract 1st row from the 2nd row</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+1 & 1 & 1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 0 & 1 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then substract 2nd row from the 1st row</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+1 & 0 & 1 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 0 & 1 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>Then substract 3rd row from the 1st row</p>
+<p>
+<script type="math/tex; mode=display"> 
+\begin{bmatrix}
+1 & 0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 0 & 1 & 1 \\
+\end{bmatrix}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="38">3.8</h2>
+<p>The generator and parity check matrix for a binary code <script type="math/tex">\mathcal{C}</script> are given by</p>
+<p>
+<script type="math/tex; mode=display">
+\tag{3.23}
+G =
+\begin{bmatrix}
+1 & 0 & 1 & 0 & 1 & 1\\
+0 & 1 & 1 & 1 & 0 & 1\\
+0 & 1 & 1 & 0 & 1 & 0\\
+\end{bmatrix}
+\quad
+H =
+\begin{bmatrix}
+1 & 1 & 0 & 1 & 1 & 0\\
+1 & 0 & 1 & 0 & 1 & 1\\
+0 & 1 & 0 & 0 & 1 & 1\\
+\end{bmatrix}
+</script>
+</p>
+<p>This code is small enough that it can be used to demonstrate several concepts
+from throughout the chapter.</p>
+<p>(b) Draw a logic diagram schematic for an implementation of an encoder for the nonsystematic
+generator G using ”and” and ”xor” gates.</p>
+<p><strong>Solution</strong>: I will just use verilog code instead of diagram schematic.</p>
+<pre><code class="language-verilog">wire [2:0] msg;
+wire [5:0] codeword;
+
+assign codeword[0] = msg[0];
+assign codeword[1] = msg[1] ^ msg[2];
+assign codeword[2] = msg[0] ^ msg[1] ^ msg[2];
+assign codeword[3] = msg[1];
+assign codeword[4] = msg[0] ^ msg[2];
+assign codeword[5] = msg[0] ^ msg[1];
+</code></pre>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(h) Using the generator matrix in (3.23), find the codeword with
+<script type="math/tex">𝐦 = [1,1,0]</script> as message bits.</p>
+<p><strong>Solution</strong>: It's </p>
+<p>
+<script type="math/tex; mode=display"> 
+c = m G = [1, 1, 0, 1, 1, 0]
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="325">3.25</h2>
+<p>Let <script type="math/tex">G</script> be the generator matrix of an <script type="math/tex">(n,k)</script> binary code
+<script type="math/tex">\mathcal{C}</script> and let no column of <script type="math/tex">G</script> be all
+zeros. Arrange all the codewords of <script type="math/tex">\mathcal{C}</script> as rows of a <script type="math/tex">2^k ×n</script>
+array.</p>
+<p>(a) Show that no column of the array contains only zeros.</p>
+<p>Let <script type="math/tex">M</script> be a <script type="math/tex">2^k \times k</script> matrix, each row is one of the
+<script type="math/tex">2^k</script> messages.</p>
+<p>And let <script type="math/tex">C = MG</script>, what we need to prove is that no column of
+<script type="math/tex">C</script> is all zeros.</p>
+<p>We will just need to show <script type="math/tex">C[:,1]</script> is not all zeros.</p>
+<p>Since <script type="math/tex">G[:,1]</script> is not all zeros, then assume <script type="math/tex">G_{i,1} = 1</script>.</p>
+<p>Then consider the following message:</p>
+<p>
+<script type="math/tex; mode=display"> 
+m = (m_1, \cdots, m_k)
+</script>
+</p>
+<p>where only <script type="math/tex">m_i = 1</script>. Then <script type="math/tex">m G[:,1]</script> is not all zero.
+If <script type="math/tex">m</script> is the <script type="math/tex">l</script>th row in <script type="math/tex">C</script>, then <script type="math/tex">C_{l,1} = 1</script>.</p>
+<p>So <script type="math/tex">C[:,1]</script> is not all zeros.</p>
+<p>For other columns we can use the same approach.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<h2 id="326">3.26</h2>
+<h2 id="329">3.29</h2>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ch03/" class="btn btn-neutral float-left" title="Chapter 3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eroicaleo/liner-algebra-done-right-4th/" class="fa fa-code-fork" style="color: #fcfcfc"> Github</a>
+        </span>
+    
+    
+      <span><a href="../ch03/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax-config.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

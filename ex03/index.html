@@ -317,11 +317,215 @@ m = (m_1, \cdots, m_k)
 If <script type="math/tex">m</script> is the <script type="math/tex">l</script>th row in <script type="math/tex">C</script>, then <script type="math/tex">C_{l,1} = 1</script>.</p>
 <p>So <script type="math/tex">C[:,1]</script> is not all zeros.</p>
 <p>For other columns we can use the same approach.</p>
+<p>(b) Show that each column of the array consists of
+<script type="math/tex">2^{k−1}</script> zeros and <script type="math/tex">2^{k−1}</script> ones.</p>
+<p><strong>Proof</strong>:</p>
+<p>Consider the <script type="math/tex">j</script>th column of <script type="math/tex">C</script>, and denote it <script type="math/tex">C_{.,j}</script>, then
+<script type="math/tex">C_{.,j} = M G_{.,j}</script>.</p>
+<p>If <script type="math/tex">C_{i,j} = 0</script>, it means <script type="math/tex">M_{i,.} G_{.,j} = 0</script>, that is
+the inner product of <script type="math/tex">M_{i,.} G_{.,j}</script> is <script type="math/tex">0</script>.</p>
+<p>Now consider <script type="math/tex">W = \text{span}(G_{.,j})</script>, then <script type="math/tex">\dim W = 1</script>. 
+From Theorem 2.64, <script type="math/tex">\dim W_⟂ = k - 1</script>. So <script type="math/tex">|W_⟂| = 2^{k−1}</script>.</p>
+<p>So <script type="math/tex">C_{.,j}</script> consists of
+<script type="math/tex">2^{k−1}</script> zeros and <script type="math/tex">2^{k−1}</script> ones.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Show that the set of all codewords with zeros in particular component positions forms a subspace of <script type="math/tex">\mathcal{C}</script>.
+What is the dimension of this subspace?</p>
+<p><strong>Proof</strong>:</p>
+<p>Let <script type="math/tex">V</script> be the set of all codewords in <script type="math/tex">\mathcal{C}</script> such that particular component positions
+are <script type="math/tex">0</script>, let <script type="math/tex">c_0, c_1 \in V</script>. For <script type="math/tex">c_0 + c_1</script>, and <script type="math/tex">k c_0, k = 0, 1</script> those particular component positions are still <script type="math/tex">0</script>. So <script type="math/tex">V</script> is close under addition and scaler multiplication.</p>
+<p>Now to the dimension of this subspace, assume the particular component positions are
+<script type="math/tex">j_1 < j_2 < \cdots < j_p</script>. Then the corresponding columns in the generator matrix are
+<script type="math/tex">G_{., j_1}, G_{., j_2}, \cdots, G_{., j_p}</script>.
+Let <script type="math/tex">W = \text{span}(G_{., j_1}, G_{., j_2}, \cdots, G_{., j_p})</script>.</p>
+<p>Then this subspace is in fact isomorphic to <script type="math/tex">W_{\perp}</script>.
+So its dimension is <script type="math/tex">k - \dim W</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(d) Show that the minimum distance <script type="math/tex">d_{\min}</script> of this code must satisfy the following inequality, known as the <strong>Plotkin</strong> bound:</p>
+<p>
+<script type="math/tex; mode=display"> 
+d_{\min} \leq 
+\frac{n 2^{k-1}}{2^{k}-1}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>From Theorem 3.4, we know <script type="math/tex">d_{\min} = 𝑤_{\min}</script>.
+Then we just need to prove</p>
+<p>
+<script type="math/tex; mode=display"> 
+𝑤_{\min} (2^{k}-1) \leq n 2^{k-1}
+</script>
+</p>
+<p>Given any non-zero codeword <script type="math/tex">c \in \mathcal{C}</script>, <script type="math/tex">𝑤_{\min} \leq wt(c)</script>,
+and there are <script type="math/tex">2^{k}-1</script> non-zero codewords. 
+That means the total number of digit <script type="math/tex">1</script> in <script type="math/tex">\mathcal{C}</script> is
+greater of equal to <script type="math/tex">𝑤_{\min} (2^{k}-1)</script>.</p>
+<p>On the other hand, from part (b), we know the the total number of digit <script type="math/tex">1</script>
+is exactly <script type="math/tex">n 2^{k-1}</script>, since each column of <script type="math/tex">C</script> has <script type="math/tex">2^{k-1}</script>
+<script type="math/tex">1</script>s and
+<script type="math/tex">C</script> has <script type="math/tex">n</script> columns.</p>
+<p>So the Plotkin bound follows.</p>
 <p>
 <script type="math/tex">\square</script>
 </p>
 <h2 id="326">3.26</h2>
+<p>Let <script type="math/tex">Γ</script> be the ensemble of all the binary systematic linear <script type="math/tex">(n,k)</script> codes.</p>
+<p>(a) Prove that a nonzero binary vector <script type="math/tex">𝐯</script> is contained in exactly
+<script type="math/tex">2^{(k−1)(n−k)}</script> of the codes in <script type="math/tex">Γ</script> or it is in none of the codes in <script type="math/tex">Γ</script>.</p>
+<p><strong>Proof</strong>:</p>
+<p>We assume that for a systematic linear <script type="math/tex">(n,k)</script> code, the generator matrix <script type="math/tex">G</script> is like this</p>
+<p>
+<script type="math/tex; mode=display"> 
+G = [I | P]
+</script>
+</p>
+<p>Basically, <script type="math/tex">I</script> is an <script type="math/tex">k \times k</script> matrix and <script type="math/tex">P</script> is an <script type="math/tex">k \times (n-k)</script> matrix.</p>
+<p>So for a message <script type="math/tex">m</script>, the codeword <script type="math/tex">c = mG = (m, p)</script>, where <script type="math/tex">p</script> is the <script type="math/tex">1 \times (n-k)</script> parity bits.</p>
+<p>Given any nonzero vector <script type="math/tex">v = (m, p)</script> where <script type="math/tex">m = (m_1, \cdots, m_k), p = (p_1, \cdots, p_{n-k})</script>.</p>
+<p>If <script type="math/tex">m = (0, \cdots, 0)</script> and <script type="math/tex">p \neq (0, \cdots, 0)</script>, then <script type="math/tex">mG = 0G = 0 \neq (m, p) = v</script>.
+So such <script type="math/tex">v</script> is not contained in any code in <script type="math/tex">Γ</script>.</p>
+<p>Now assume <script type="math/tex">m \neq 0</script>, for <script type="math/tex">p_1</script>, we need to find <script type="math/tex">P_{.,1}</script> such that <script type="math/tex">m P_{.,1} = p_1</script>.</p>
+<p>If <script type="math/tex">p_1 = 0</script>, then let <script type="math/tex">W = \text{span}(m)</script>. So <script type="math/tex">\dim W = 1</script>. Any vector <script type="math/tex">w</script> in <script type="math/tex">W_{\perp}</script> will satisfy
+<script type="math/tex">⟨m,w⟩ = 0</script>. Since <script type="math/tex">\dim W_{\perp} = (k-1)</script>, we know <script type="math/tex">|W_{\perp}| = 2^{k-1}</script>.</p>
+<p>On the other hand, if <script type="math/tex">p_1 = 1</script>, then any vector <script type="math/tex">w \not\in W_{\perp}</script> will satisfy
+<script type="math/tex">⟨m,w⟩ = 1</script>. <script type="math/tex">|GF(2)^k\backslash W_{\perp}| = 2^{k-1}</script>.</p>
+<p>In either case, there are <script type="math/tex">2^{k-1}</script> choices to satisfy <script type="math/tex">m P_{.,1} = p_1</script>.
+We can apply the same argument to <script type="math/tex">P_{.,1}, \cdots, P_{.,n-k}</script>.</p>
+<p>Therefore, <script type="math/tex">v</script> is contained in exactly <script type="math/tex">2^{(k−1)(n−k)}</script> codes.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Using the fact that the nonzero <script type="math/tex">n</script>-tuples of weight <script type="math/tex">d−1</script> or less can be in at most</p>
+<p>
+<script type="math/tex; mode=display"> 
+2^{(k−1)(n−k)}
+\sum_{i = 1}^{d-1}
+\binom{n}{i}
+</script>
+</p>
+<p>
+<script type="math/tex">(n,k)</script> systematic binary linear codes, show that there exists an <script type="math/tex">(n,k)</script> linear code with
+minimum distance of at least <script type="math/tex">d</script> if the following bound is satisfied:</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{i = 1}^{d-1}
+\binom{n}{i} < 2^{n-k}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>First note, since <script type="math/tex">P</script> is an <script type="math/tex">k \times (n-k)</script> matrix, we have <script type="math/tex">|\Gamma| = 2^{k(n-k)}</script>.</p>
+<p>If a code <script type="math/tex">\mathcal{C}</script>'s minimum distance is less than <script type="math/tex">d</script>, then it must contain a codeword <script type="math/tex">c</script> such that
+<script type="math/tex">wt(c) < d</script>, i.e. <script type="math/tex">wt(c) = 1, \cdots, d-1</script>.</p>
+<p>Since we can have at most <script type="math/tex">\sum_{i = 1}^{d-1}\binom{n}{i}</script> distinct codewords with <script type="math/tex">wt(c) < d</script>,
+and each codeword is contained in exactly <script type="math/tex">2^{(k−1)(n−k)}</script> codes, then
+the number of code <script type="math/tex">\mathcal{C}</script> with minimum distance less that <script type="math/tex">d</script> is at most</p>
+<p>
+<script type="math/tex; mode=display"> 
+2^{(k−1)(n−k)}
+\sum_{i = 1}^{d-1}
+\binom{n}{i}
+<
+2^{(k−1)(n−k)} \cdot 2^{n-k} = 2^{k(n-k)}
+</script>
+</p>
+<p>So there must be at least one code in <script type="math/tex">\Gamma</script>, whose distance is greater or equal to <script type="math/tex">d</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(c) Show that there exists an <script type="math/tex">(n,k)</script> binary linear code with minimum distance at least <script type="math/tex">d</script> that
+satisfies the following inequality:</p>
+<p>
+<script type="math/tex; mode=display"> 
+2^{n-k} \leq
+\sum_{i = 0}^{d} \binom{n}{i}
+</script>
+</p>
+<p>This provides a lower bound on the minimum distance attainable with an <script type="math/tex">(n,k)</script> linear code
+known as the <strong>Gilbert–Varshamov</strong> bound.</p>
+<p><strong>Proof</strong>:</p>
+<p>Assume <script type="math/tex">d-1</script> is the largest integer that satisfies <script type="math/tex">\sum_{i = 1}^{d-1} \binom{n}{i} < 2^{n-k}</script>,
+i.e. <script type="math/tex">\sum_{i = 1}^{d-1} \binom{n}{i} < 2^{n-k} \leq \sum_{i = 1}^{d} \binom{n}{i}</script> 
+then use part (2), we can find a <script type="math/tex">\mathcal{C} \in \Gamma</script> whose distance is <script type="math/tex">d</script>.</p>
+<p>And</p>
+<p>
+<script type="math/tex; mode=display"> 
+\sum_{i = 0}^{d} \binom{n}{i} = 1 + \sum_{i = 1}^{d} \binom{n}{i} \geq 1 + 2^{n-k} > 2^{n-k}
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
 <h2 id="329">3.29</h2>
+<p>The <script type="math/tex">[𝐮|𝐮 +𝐯]</script> construction: Let <script type="math/tex">\mathcal{C}_i, i= 1,2</script> be linear binary <script type="math/tex">(n,k_i)</script> block codes with generator
+matrix <script type="math/tex">G_i</script> and minimum distance <script type="math/tex">d_i</script>. Define the code <script type="math/tex">\mathcal{C}</script> by</p>
+<p>
+<script type="math/tex; mode=display"> 
+\mathcal{C} = |\mathcal{C}_1|\mathcal{C}_1 + \mathcal{C}_2| =
+\{[u|u+v] : u \in \mathcal{C}_1, v \in \mathcal{C}_2\}.
+</script>
+</p>
+<p>(a) Show that <script type="math/tex">\mathcal{C}</script> has the generator</p>
+<p>
+<script type="math/tex; mode=display"> 
+G =
+\begin{bmatrix}
+    G_1 & G_1 \\
+    0   & G_2 \\
+\end{bmatrix}
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>
+<script type="math/tex">G_i</script> is <script type="math/tex">k_i \times n</script> matrix.
+Let <script type="math/tex">m_1</script> be a <script type="math/tex">1 \times k_1</script> message.
+Let <script type="math/tex">m_2</script> be a <script type="math/tex">1 \times k_2</script> message.</p>
+<p>and <script type="math/tex">u = m_1 G_1, v = m_2 G_2</script>.</p>
+<p>And</p>
+<p>
+<script type="math/tex; mode=display"> 
+[m_1 | m_2] G = [m_1 G_1 + 0 | m_1 G_1 + m_2 G_2] = [u | u + v]
+</script>
+</p>
+<p>So <script type="math/tex">G</script> is the generator of <script type="math/tex">\mathcal{C}</script>.</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
+<p>(b) Show that the minimum distance of <script type="math/tex">\mathcal{C}</script> is</p>
+<p>
+<script type="math/tex; mode=display"> 
+d_{\min} = \min (2 d_1, d_2)
+</script>
+</p>
+<p><strong>Proof</strong>:</p>
+<p>Note that since <script type="math/tex">c = [u|u+v]</script>, then <script type="math/tex">wt(c) = wt(u) + wt(u+v)</script>.</p>
+<p>If <script type="math/tex">v = 0</script>, then <script type="math/tex">wt(c) = 2 wt(u) \geq 2 d_1</script>.</p>
+<p>If <script type="math/tex">v \neq 0</script>, then given any <script type="math/tex">u</script>. Let's treat <script type="math/tex">u, v</script> as vector in <script type="math/tex">\mathbb{R}^n</script>.</p>
+<p>So <script type="math/tex">wt(u+v) \geq wt(v) - ⟨u,v⟩</script>, and also <script type="math/tex">⟨u,v⟩ \leq wt(u)</script>.</p>
+<p>So</p>
+<p>
+<script type="math/tex; mode=display">
+wt(c) = wt(u) + wt(u+v) \geq wt(u) + (wt(v) - ⟨u,v⟩) \geq wt(v) \geq d_2
+</script>
+</p>
+<p>In either case, <script type="math/tex">wt(c) \geq \min (2 d_1, d_2)</script>.</p>
+<p>Furthurmore, when <script type="math/tex">v = 0</script>, we can find <script type="math/tex">u</script> to reach <script type="math/tex">wt(c) = 2 d_1</script>.
+when <script type="math/tex">u = 0</script>, we can find <script type="math/tex">v</script> to reach <script type="math/tex">wt(c) = d_2</script>.</p>
+<p>So <script type="math/tex">d_{\min} = \min (2 d_1, d_2)</script>.</p>
+<p>A note from AI: we can use the triangle inequality in the hamming distance to prove this</p>
+<p>
+<script type="math/tex; mode=display"> 
+wt(v) = d(v, 0) = d(u+v, u) \leq d(u+v, 0) + d(0, u) = wt(u+v) + wt(u) \\
+\Rightarrow \\
+wt(u+v) \geq wt(v) - wt(u)
+</script>
+</p>
+<p>
+<script type="math/tex">\square</script>
+</p>
               
             </div>
           </div><footer>
